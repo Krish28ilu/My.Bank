@@ -5,6 +5,7 @@
 package com.mycompany.bank_project;
 
 import java.awt.Color;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -135,6 +136,7 @@ public class Add_money extends javax.swing.JFrame {
             // TODO add your handling code here:
 
             DataBase.addMoney(accountnumber, password.getText(), Double.valueOf(amount.getText()) );
+          //  DataBase.addTransaction(accountnumber, "CREDIT", String.valueOf(LocalDateTime.now()), Double.valueOf(amount.getText()));
             
         } catch (Exception ex) {
             

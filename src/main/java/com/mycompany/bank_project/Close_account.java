@@ -4,6 +4,12 @@
  */
 package com.mycompany.bank_project;
 
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
+
 /**
  *
  * @author Krish
@@ -13,8 +19,23 @@ public class Close_account extends javax.swing.JFrame {
     /**
      * Creates new form Close_account
      */
+    
+    int accountnumber;
     public Close_account() {
         initComponents();
+        l1.setVisible(false);
+        l2.setVisible(false);
+        or.setVisible(false);
+        YES.setVisible(false);
+        NO.setVisible(false);
+        deleteAccount.setVisible(false);
+        confirmpassword.setVisible(false);
+        confirmpassword1.setVisible(false);
+        
+    }
+ public Close_account(int accountnumber) {
+        this();
+        this.accountnumber = accountnumber;
     }
 
     /**
@@ -26,23 +47,236 @@ public class Close_account extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        password1 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        l1 = new javax.swing.JLabel();
+        l2 = new javax.swing.JLabel();
+        YES = new javax.swing.JButton();
+        NO = new javax.swing.JButton();
+        or = new javax.swing.JLabel();
+        confirmpassword1 = new javax.swing.JLabel();
+        confirmpassword = new javax.swing.JPasswordField();
+        submit1 = new javax.swing.JButton();
+        deleteAccount = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 800));
         setPreferredSize(new java.awt.Dimension(800, 800));
+
+        password1.setText("PASSWORD");
+
+        l1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        l1.setForeground(new java.awt.Color(255, 0, 0));
+        l1.setText("DO YOU REALLY WANT TO CLOSE ACCOUNT?  ");
+
+        l2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        l2.setForeground(new java.awt.Color(255, 0, 0));
+        l2.setText("IT WILL REMOVE ALL YOUR DATA FROM OUR BANK.");
+
+        YES.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        YES.setForeground(new java.awt.Color(255, 0, 51));
+        YES.setText("YES");
+        YES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YESActionPerformed(evt);
+            }
+        });
+
+        NO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        NO.setForeground(new java.awt.Color(0, 204, 0));
+        NO.setText("NO");
+        NO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NOActionPerformed(evt);
+            }
+        });
+
+        or.setText("or");
+
+        confirmpassword1.setText("CONFIRM PASSWORD");
+
+        submit1.setText("SUBMIT");
+        submit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit1ActionPerformed(evt);
+            }
+        });
+
+        deleteAccount.setText("DELETE ACCOUNT");
+        deleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 655, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(YES, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(or, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(NO, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(234, 234, 234))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(l1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(deleteAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(175, 175, 175)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(confirmpassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(confirmpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(l2)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(password1)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(submit1)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmpassword1)
+                    .addComponent(confirmpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(deleteAccount)
+                .addGap(55, 55, 55)
+                .addComponent(l1)
+                .addGap(29, 29, 29)
+                .addComponent(l2)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NO)
+                    .addComponent(or)
+                    .addComponent(YES))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
+        // TODO add your handling code here:
+        
+        if(password.getText() == null || password.getText().trim().equals("")){
+            password.setBorder(new LineBorder(Color.RED,2));
+            return;
+        }
+        else{
+            password.setBorder(null);
+            
+        }
+        
+        deleteAccount.setVisible(true);
+        confirmpassword.setVisible(true);
+        confirmpassword1.setVisible(true);
+        
+    }//GEN-LAST:event_submit1ActionPerformed
+
+    private void deleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAccountActionPerformed
+        // TODO add your handling code here:
+        
+        if(confirmpassword.getText() == null || confirmpassword.getText().trim().equals("")){
+            confirmpassword.setBorder(new LineBorder(Color.RED,2));
+            return;
+        }
+        else{
+            confirmpassword.setBorder(null);
+            
+        }
+        
+        if(password.getText().trim().equals(confirmpassword.getText())){
+            
+            
+         try {
+            // TODO add your handling code here:
+            boolean result =
+            DataBase.checkPassword(accountnumber, password.getText());
+            if (result ){
+               
+                 l1.setVisible( true);
+                 l2.setVisible(true);
+                 or.setVisible(true);
+                 YES.setVisible(true);
+                 NO.setVisible(true);
+                 
+                 
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "WRONG PASSWORD, PLEASE TRY AGAIN");
+                
+            }
+        } catch (Exception ex) {
+            
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "SOMETHING WENT WRONG");
+        }
+            
+            
+        }
+        
+        else {
+            JOptionPane.showMessageDialog(this, "PASSWORD DOES NOT MATCH");
+        }
+        
+    }//GEN-LAST:event_deleteAccountActionPerformed
+
+    private void YESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YESActionPerformed
+        try {
+            // TODO add your handling code here:
+
+            DataBase.closeAccount(accountnumber, password.getText());
+            JOptionPane.showMessageDialog(this, "GOODBYE! WE HOPE TO SEE YOU BACK SOON IN OUR BANK");
+            this.setVisible(false);
+             new Login_page().setVisible(true);
+            
+        } catch (Exception ex) {
+            
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "SOMETHING WENT WRONG ON OUR SIDE. COULDN'T DELETE ACCOUNT");
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_YESActionPerformed
+
+    private void NOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NOActionPerformed
+        // TODO add your handling code here:
+        
+          JOptionPane.showMessageDialog(this, "ACCOUNT NOT DELETED");
+          
+          this.setVisible(false);
+             new Features().setVisible(true);
+          
+        
+    }//GEN-LAST:event_NOActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +314,16 @@ public class Close_account extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton NO;
+    private javax.swing.JButton YES;
+    private javax.swing.JPasswordField confirmpassword;
+    private javax.swing.JLabel confirmpassword1;
+    private javax.swing.JButton deleteAccount;
+    private javax.swing.JLabel l1;
+    private javax.swing.JLabel l2;
+    private javax.swing.JLabel or;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JLabel password1;
+    private javax.swing.JButton submit1;
     // End of variables declaration//GEN-END:variables
 }

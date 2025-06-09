@@ -41,8 +41,8 @@ public class Features extends javax.swing.JFrame {
         addMoney = new javax.swing.JButton();
         withdrawMoney = new javax.swing.JButton();
         sendMoney = new javax.swing.JButton();
-        checkTransactionHistory = new javax.swing.JButton();
-        checkBalance = new javax.swing.JButton();
+        viewTransactionHistory = new javax.swing.JButton();
+        viewBalance = new javax.swing.JButton();
         updateDetails = new javax.swing.JButton();
         changePassword = new javax.swing.JButton();
         closeBankAccount = new javax.swing.JButton();
@@ -72,17 +72,17 @@ public class Features extends javax.swing.JFrame {
             }
         });
 
-        checkTransactionHistory.setText("CHECK TRANSACTION HISTORY");
-        checkTransactionHistory.addActionListener(new java.awt.event.ActionListener() {
+        viewTransactionHistory.setText("VIEW TRANSACTION HISTORY");
+        viewTransactionHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkTransactionHistoryActionPerformed(evt);
+                viewTransactionHistoryActionPerformed(evt);
             }
         });
 
-        checkBalance.setText("CHECK BALANCE");
-        checkBalance.addActionListener(new java.awt.event.ActionListener() {
+        viewBalance.setText("VIEW BALANCE");
+        viewBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBalanceActionPerformed(evt);
+                viewBalanceActionPerformed(evt);
             }
         });
 
@@ -117,8 +117,8 @@ public class Features extends javax.swing.JFrame {
                     .addComponent(withdrawMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sendMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(checkTransactionHistory, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                    .addComponent(checkBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewTransactionHistory, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                    .addComponent(viewBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(updateDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(changePassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(closeBankAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -134,9 +134,9 @@ public class Features extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(sendMoney)
                 .addGap(18, 18, 18)
-                .addComponent(checkTransactionHistory)
+                .addComponent(viewTransactionHistory)
                 .addGap(18, 18, 18)
-                .addComponent(checkBalance)
+                .addComponent(viewBalance)
                 .addGap(18, 18, 18)
                 .addComponent(updateDetails)
                 .addGap(18, 18, 18)
@@ -168,24 +168,24 @@ public class Features extends javax.swing.JFrame {
         new Send_recieve_money(accountnumber).setVisible(true);
     }//GEN-LAST:event_sendMoneyActionPerformed
 
-    private void checkTransactionHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTransactionHistoryActionPerformed
+    private void viewTransactionHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTransactionHistoryActionPerformed
         // TODO add your handling code here:
         
         this.setVisible(false);
         new Transaction_history(accountnumber).setVisible(true);
-    }//GEN-LAST:event_checkTransactionHistoryActionPerformed
+    }//GEN-LAST:event_viewTransactionHistoryActionPerformed
 
-    private void checkBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBalanceActionPerformed
+    private void viewBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBalanceActionPerformed
         // TODO add your handling code here:
         
         this.setVisible(false);
         new View_Balance(accountnumber).setVisible(true);
-    }//GEN-LAST:event_checkBalanceActionPerformed
+    }//GEN-LAST:event_viewBalanceActionPerformed
 
     private void updateDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateDetailsActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new Update_account_details().setVisible(true);
+        new Update_account_details(accountnumber).setVisible(true);
     }//GEN-LAST:event_updateDetailsActionPerformed
 
     private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
@@ -199,7 +199,7 @@ public class Features extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.setVisible(false);
-        new Close_account().setVisible(true);
+        new Close_account(accountnumber).setVisible(true);
     }//GEN-LAST:event_closeBankAccountActionPerformed
 
     /**
@@ -236,11 +236,11 @@ public class Features extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMoney;
     private javax.swing.JButton changePassword;
-    private javax.swing.JButton checkBalance;
-    private javax.swing.JButton checkTransactionHistory;
     private javax.swing.JButton closeBankAccount;
     private javax.swing.JButton sendMoney;
     private javax.swing.JButton updateDetails;
+    private javax.swing.JButton viewBalance;
+    private javax.swing.JButton viewTransactionHistory;
     private javax.swing.JButton withdrawMoney;
     // End of variables declaration//GEN-END:variables
 }

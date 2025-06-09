@@ -35,8 +35,8 @@
                   <Component id="withdrawMoney" max="32767" attributes="0"/>
                   <Component id="addMoney" max="32767" attributes="0"/>
                   <Component id="sendMoney" max="32767" attributes="0"/>
-                  <Component id="checkTransactionHistory" pref="244" max="32767" attributes="0"/>
-                  <Component id="checkBalance" max="32767" attributes="0"/>
+                  <Component id="viewTransactionHistory" pref="244" max="32767" attributes="0"/>
+                  <Component id="viewBalance" max="32767" attributes="0"/>
                   <Component id="updateDetails" max="32767" attributes="0"/>
                   <Component id="changePassword" max="32767" attributes="0"/>
                   <Component id="closeBankAccount" max="32767" attributes="0"/>
@@ -55,9 +55,9 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="sendMoney" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="checkTransactionHistory" min="-2" max="-2" attributes="0"/>
+              <Component id="viewTransactionHistory" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="checkBalance" min="-2" max="-2" attributes="0"/>
+              <Component id="viewBalance" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="updateDetails" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -94,20 +94,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sendMoneyActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="checkTransactionHistory">
+    <Component class="javax.swing.JButton" name="viewTransactionHistory">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CHECK TRANSACTION HISTORY"/>
+        <Property name="text" type="java.lang.String" value="VIEW TRANSACTION HISTORY"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkTransactionHistoryActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewTransactionHistoryActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="checkBalance">
+    <Component class="javax.swing.JButton" name="viewBalance">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CHECK BALANCE"/>
+        <Property name="text" type="java.lang.String" value="VIEW BALANCE"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBalanceActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewBalanceActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="updateDetails">

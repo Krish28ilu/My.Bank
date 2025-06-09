@@ -5,6 +5,8 @@
 package com.mycompany.bank_project;
 
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 
@@ -25,6 +27,12 @@ public class Change_password extends javax.swing.JFrame {
     }
     public Change_password() {
         initComponents();
+        newpassword.setVisible(false);
+        newpassword1.setVisible(false);
+        confirmnewpassword.setVisible(false);
+        confirmnewpassword1.setVisible(false);
+        changepassword.setVisible(false);
+        
     }
 
     /**
@@ -38,7 +46,7 @@ public class Change_password extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
         newpassword1 = new javax.swing.JLabel();
         confirmnewpassword1 = new javax.swing.JLabel();
         newpassword = new javax.swing.JPasswordField();
@@ -52,10 +60,10 @@ public class Change_password extends javax.swing.JFrame {
 
         jLabel1.setText("PASSWORD");
 
-        jButton1.setText("SUBMIT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        submit.setText("SUBMIT");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
 
@@ -64,6 +72,11 @@ public class Change_password extends javax.swing.JFrame {
         confirmnewpassword1.setText("CONFIRM PASSWORD");
 
         changepassword.setText("CHANGE PASSWORD");
+        changepassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changepasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +86,7 @@ public class Change_password extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(232, 232, 232)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -102,7 +115,7 @@ public class Change_password extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addComponent(jButton1)
+                .addComponent(submit)
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newpassword1)
@@ -119,7 +132,7 @@ public class Change_password extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // TODO add your handling code here:
         
         
@@ -137,6 +150,20 @@ public class Change_password extends javax.swing.JFrame {
             boolean result =
             DataBase.checkPassword(accountnumber, password.getText());
             if (result ){
+                newpassword.setVisible(true);
+                newpassword1.setVisible(true);
+                confirmnewpassword.setVisible(true);
+                confirmnewpassword1.setVisible(true);
+                 changepassword.setVisible(true);
+                 
+                 
+                 changepasswordActionPerformed(evt);
+                 
+                 
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "WRONG PASSWORD, PLEASE TRY AGAIN");
                 
             }
         } catch (Exception ex) {
@@ -148,7 +175,60 @@ public class Change_password extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_submitActionPerformed
+
+    private void changepasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changepasswordActionPerformed
+        // TODO add your handling code here:
+        
+        
+           
+        
+            
+          if(newpassword.getText() == null || newpassword.getText().trim().equals("")){
+                   newpassword.setBorder(new LineBorder(Color.RED,2));
+                     return;
+                        }
+                     else{
+                   newpassword.setBorder(null);
+            
+                    }
+                 
+                   
+                  if(confirmnewpassword.getText() == null ||confirmnewpassword.getText().trim().equals("")){
+                   confirmnewpassword.setBorder(new LineBorder(Color.RED,2));
+                     return;
+                        }
+                     else{
+                   confirmnewpassword.setBorder(null);
+            
+                    }
+        
+                  
+                  if ( newpassword.getText().trim().matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,12}$") && newpassword.getText().trim().equals(confirmnewpassword.getText())){
+                     
+                   try 
+                   {
+                  DataBase.changePassword(accountnumber, password.getText(), newpassword.getText());
+                   } 
+                   
+                   catch (Exception ex) {
+                  
+                   ex.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "SOMETHING WENT WRONG");
+                                }
+                      
+                  }
+                  
+                  else{
+                      JOptionPane.showMessageDialog(this, "PASSWORD DOES'T MATCH");
+                  }
+                      
+                   this.setVisible(false);
+                   new Features( String.valueOf(accountnumber)).setVisible(true);
+                  
+                  
+                  
+    }//GEN-LAST:event_changepasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,10 +269,10 @@ public class Change_password extends javax.swing.JFrame {
     private javax.swing.JButton changepassword;
     private javax.swing.JPasswordField confirmnewpassword;
     private javax.swing.JLabel confirmnewpassword1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField newpassword;
     private javax.swing.JLabel newpassword1;
     private javax.swing.JPasswordField password;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

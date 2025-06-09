@@ -187,7 +187,7 @@ public class otp_password extends javax.swing.JFrame {
         
          try {
              
-             int accountnumber = AccountNumberGenerator.generateAccountNumber();
+             int accountnumber = DataBase.generateNewAccountNumber();
             
             DataBase.saveCustomer(
                 accountnumber,
@@ -204,7 +204,10 @@ public class otp_password extends javax.swing.JFrame {
                 password.getText());
            
              JOptionPane.showMessageDialog(this, "Account creation done");
-            
+             String phoneNumber = phone;
+             
+              Smssender.sendSms(phoneNumber, " Hello, YOUR ACCOUNT NUMBER IS : " + accountnumber);
+             
             
             this.setVisible(false);
             new Login_page().setVisible(true);

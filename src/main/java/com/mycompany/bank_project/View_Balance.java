@@ -115,7 +115,10 @@ public class View_Balance extends javax.swing.JFrame {
 
            balance = DataBase.viewBalance(accountnumber, password.getText());
             balancetxt.setText(String.valueOf(balance));
-            
+           // JOptionPane.showMessageDialog(this, "BALANCE = " + balance);
+           Thread.sleep(7000) ;
+           
+           
         } catch (Exception ex) {
             
             ex.printStackTrace();

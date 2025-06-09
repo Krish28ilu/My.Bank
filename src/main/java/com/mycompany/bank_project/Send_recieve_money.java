@@ -4,15 +4,19 @@
  */
 package com.mycompany.bank_project;
 
+import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
+
 /**
  *
  * @author Krish
  */
 public class Send_recieve_money extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Send_recieve_money
-     */
+   
     int accountnumber;
      public Send_recieve_money(int accountnumber) {
         this();
@@ -20,6 +24,13 @@ public class Send_recieve_money extends javax.swing.JFrame {
     }
     public Send_recieve_money() {
         initComponents();
+        sendMoney.setVisible(false);
+        password.setVisible(false);
+        password1.setVisible(false);
+        amount.setVisible(false);
+        amount1.setVisible(false);
+        txt.setVisible(false);
+        confirm2.setVisible(false);
     }
 
     /**
@@ -31,62 +42,87 @@ public class Send_recieve_money extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        confirm2 = new javax.swing.JButton();
+        password1 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        sendMoney = new javax.swing.JButton();
+        amount1 = new javax.swing.JLabel();
+        amount = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        receiveraccountnumber = new javax.swing.JTextField();
+        confirm1 = new javax.swing.JButton();
+        txt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 800));
         setPreferredSize(new java.awt.Dimension(800, 800));
 
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        confirm2.setText("CONFIRM");
+        confirm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                confirm2ActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("PASSWORD");
+        password1.setText("PASSWORD");
 
-        jButton2.setText("SEND MONEY");
+        sendMoney.setText("SEND MONEY");
+        sendMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendMoneyActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("AMOUNT");
+        amount1.setText("AMOUNT");
 
         jLabel3.setText("RECIEVER'S ACCOUNT NUMBER");
+
+        confirm1.setText("CONFIRM");
+        confirm1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm1ActionPerformed(evt);
+            }
+        });
+
+        txt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txt.setForeground(new java.awt.Color(255, 51, 0));
+        txt.setText("AMOUNT SHOULD BE GREATER THAN 100 AND IN MULTIPLES OF 100");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 82, Short.MAX_VALUE)
+                .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sendMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(confirm1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(143, 143, 143)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField2))
+                                .addComponent(receiveraccountnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(amount1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(75, 75, 75))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(160, Short.MAX_VALUE))
+                        .addGap(258, 258, 258)
+                        .addComponent(confirm2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,28 +130,195 @@ public class Send_recieve_money extends javax.swing.JFrame {
                 .addGap(154, 154, 154)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(receiveraccountnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(confirm1)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(amount1)
+                    .addComponent(amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(23, 23, 23)
+                .addComponent(txt)
+                .addGap(18, 18, 18)
+                .addComponent(confirm2)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jButton2)
-                .addContainerGap(252, Short.MAX_VALUE))
+                    .addComponent(password1)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(sendMoney)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void confirm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        /*
+          if(receiveraccountnumber.getText() == null || receiveraccountnumber.getText().trim().equals("")){
+            receiveraccountnumber.setBorder(new LineBorder(Color.RED,2));
+            return;
+        }
+        else{
+            receiveraccountnumber.setBorder(null);
+            
+        }
+        */
+        
+         if(amount.getText().trim().matches("^[0-9]+$") ){
+        
+        
+         amount.setBorder(null);
+            
+        }
+        else {
+             amount.setBorder(new LineBorder(Color.RED , 2));
+            return;
+         }
+        
+         if (Float.valueOf(amount.getText()) > 100 && Float.valueOf(amount.getText()) % 100 == 0) {
+    
+         System.out.println("Amount is valid. Proceeding with transaction...");
+           JOptionPane.showMessageDialog(this, "Amount is valid. Proceeding with transaction...");
+           
+             try {
+                 Thread.sleep(3000);
+             } catch (InterruptedException ex) {
+                 Logger.getLogger(Send_recieve_money.class.getName()).log(Level.SEVERE, null, ex);
+             }
+             
+             sendMoney.setVisible(true);
+              password.setVisible(true);
+              password1.setVisible(true);
+              
+              sendMoneyActionPerformed(evt);
+             
+         
+         } 
+         else {
+            amount.setBorder(new LineBorder(Color.RED , 2));
+            JOptionPane.showMessageDialog(this, "ENTER VALID AMOUNT");
+            return;
+          
+         }
+
+         
+         
+         
+         
+         
+    }//GEN-LAST:event_confirm2ActionPerformed
+
+    private void confirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm1ActionPerformed
+        // TODO add your handling code here:
+        
+        if(receiveraccountnumber.getText() == null || receiveraccountnumber.getText().trim().equals("")){
+            receiveraccountnumber.setBorder(new LineBorder(Color.RED,2));
+            return;
+        }
+        else{
+            receiveraccountnumber.setBorder(null);
+            
+        }
+        
+         
+        try {
+           boolean  result =
+                   DataBase.checkAccount(Integer.valueOf(receiveraccountnumber.getText()));
+           
+         if (result ){
+             JOptionPane.showMessageDialog(this, "ACCOUNT FOUND");
+               amount.setVisible(true);
+               amount1.setVisible(true);
+               confirm2.setVisible(true);
+               txt.setVisible(true);
+               
+               confirm2ActionPerformed(evt);
+            }
+           else{
+               JOptionPane.showMessageDialog(this, "THIS ACCOUNT DOES NOT EXIST IN OUR BANK");
+           }
+           
+           
+        } catch (Exception ex) {
+             ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "SOMETHING WENT WRONG");
+        }
+            
+        
+         if(amount.getText().trim().matches("^[0-9]+$"))
+        {
+        System.out.println(amount.getText());
+        
+         amount.setBorder(null);
+            
+        }
+        else {
+             amount.setBorder(new LineBorder(Color.RED , 2));
+            return;
+         }
+        
+        
+        
+    }//GEN-LAST:event_confirm1ActionPerformed
+
+    private void sendMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendMoneyActionPerformed
+        // TODO add your handling code here:
+        
+         if(password.getText() == null || password.getText().trim().equals("")){
+            password.setBorder(new LineBorder(Color.RED,2));
+            return;
+        }
+        else{
+            password.setBorder(null);
+            
+        }
+         
+         try {
+           
+            boolean result =  DataBase.checkPassword(accountnumber, password.getText());
+            if (result ){
+             
+            boolean result2 = DataBase.checkAmount(accountnumber, Float.valueOf(amount.getText()));
+               if (result2){
+                   
+                  boolean result3 = DataBase.sendMoney(accountnumber, Integer.valueOf(receiveraccountnumber.getText()),Float.valueOf(amount.getText()));
+                   if(result3){
+                       
+                       JOptionPane.showMessageDialog(this, "MONEY SENT SUCCESSFULLY");
+                       
+                        this.setVisible(false);
+                        new Features().setVisible(true);
+                   }
+                   else{
+                       JOptionPane.showMessageDialog(this, "COULDN'T SEND MONEY. IF MONEY IS DEDUCTED, IT WILL SONN BE REFUNDED");
+                   }
+               }
+               else{
+                   
+                   JOptionPane.showMessageDialog(this, "ENTERED AMOUNT EXCEEDS YOUR CURRENT BALANCE. ENTER VALID AMOUNT.");
+                   
+               }  
+                 
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(this, "WRONG PASSWORD, PLEASE TRY AGAIN");
+                
+            }
+        } 
+         catch (Exception ex) {
+            
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "SOMETHING WENT WRONG");
+        }
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_sendMoneyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,13 +356,15 @@ public class Send_recieve_money extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField amount;
+    private javax.swing.JLabel amount1;
+    private javax.swing.JButton confirm1;
+    private javax.swing.JButton confirm2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JLabel password1;
+    private javax.swing.JTextField receiveraccountnumber;
+    private javax.swing.JButton sendMoney;
+    private javax.swing.JLabel txt;
     // End of variables declaration//GEN-END:variables
 }

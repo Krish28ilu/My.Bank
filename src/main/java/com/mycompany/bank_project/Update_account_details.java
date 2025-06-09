@@ -17,6 +17,9 @@ public class Update_account_details extends javax.swing.JFrame {
         initComponents();
     }
 
+    public Update_account_details(int accountnumber) {
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
